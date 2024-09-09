@@ -1,4 +1,4 @@
-# JSON 파일 경로
+﻿# JSON 파일 경로
 $scriptPath = $PSScriptRoot
 $jsonFile = Join-Path $scriptPath "response.json"
 
@@ -8,6 +8,7 @@ $jsonData = Get-Content $jsonFile | ConvertFrom-Json
 
 
 $scriptPath = $PSScriptRoot
+$OutputEncoding = [ System.Text.Encoding]::UTF8   
 
 # 각 항목을 반복 처리
 foreach ($item in $jsonData) {
