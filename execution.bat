@@ -8,9 +8,6 @@ for /f "tokens=1* delims==" %%A in (%BASE_DIR%userinfo.txt) do (
     set "key=%%A"
     set "value=%%B"
 
-    echo !key! !value!
-
-
 		if "!key!"=="userId" set "userId=!value!"
     if "!key!"=="passwd" set "passwd=!value!"
 )
