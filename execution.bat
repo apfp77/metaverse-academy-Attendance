@@ -22,6 +22,8 @@ curl -b %BASE_DIR%cookies.txt -s -X POST "https://mtvs.kr/login" -H "Content-Typ
 
 echo.
 
+curl -b %BASE_DIR%cookies.txt -s -o %BASE_DIR%total_mileage.json -X GET "https://mtvs.kr/student/mypage/totalMileage"
+
 curl -b %BASE_DIR%cookies.txt -s -o %BASE_DIR%cccd.json -X GET "https://mtvs.kr/student/mypage/curriculum"
 
 powershell -ExecutionPolicy RemoteSigned -File %BASE_DIR%cccd.ps1

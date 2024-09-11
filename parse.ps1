@@ -2,6 +2,13 @@
 $scriptPath = $PSScriptRoot
 $jsonFile = Join-Path $scriptPath "response.json"
 
+# JSON 파일 경로
+$mileageFile = Join-Path $PSScriptRoot "total_mileage.json"
+
+
+# JSON 파일을 읽어서 객체로 변환
+$mileageData = Get-Content $mileageFile | ConvertFrom-Json
+
 
 # JSON 파일을 읽어서 객체로 변환
 $jsonData = Get-Content $jsonFile | ConvertFrom-Json
@@ -94,4 +101,6 @@ if (100 -lt $sum){
 }
 Write-Host "$sum 만원"  -ForegroundColor Green
 Write-Host
-Write-Host "방학, 대체공휴일, 최대 출석일 수, 결석 등의 이유로 정확하지 않을 수 있습니다." -ForegroundColor Yellow
+Write-Host "마이페이지 마일리지: $mileageData" -ForegroundColor Green
+Write-Host
+Write-Host "방학, 대체공휴일, 최대 출석일 수, 결석 등의 이유로 정확하지 않을 수 있습니다. 마일리지와 금액을 비교해 주세요." -ForegroundColor Yellow
