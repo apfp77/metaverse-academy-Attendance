@@ -1,5 +1,7 @@
 @echo off
 
+chcp 65001 >nul
+
 set "BASE_DIR=%~dp0"
 
 setlocal enabledelayedexpansion
