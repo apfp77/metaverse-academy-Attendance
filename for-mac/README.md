@@ -24,11 +24,11 @@ passwd=your^!passw^!ord
 a. 스크립트를 저장한 디렉토리로 이동합니다.
 b. 스크립트에 실행 권한을 부여합니다:
    ```bash
-   chmod +x attendance.sh
+   chmod +x attd.sh
    ```
 c. 스크립트를 실행합니다:
    ```bash
-   ./attendance.sh
+   ./attd.sh
    ```
 
 4. 출력 데이터 예시:
