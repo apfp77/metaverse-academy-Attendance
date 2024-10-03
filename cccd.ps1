@@ -8,7 +8,14 @@ $content = Get-Content -Encoding utf8 $jsonFile
 $jsonData = $content | ConvertFrom-Json
 
 # 첫 번째 항목의 ccCd 값을 추출
-$firstCcCd = $jsonData.requireReportList[0].ccCd
+$firstCcCd = ''
+
+if ($jsonData.requireCurriculumList[0].ccCd -ne $null -and $jsonData.requireCurriculumList[0].ccCd -ne '') {
+    $firstCcCd = $jsonData.requireCurriculumList[0].ccCd
+} elseif ($jsonData.requireReportList[0].ccCd -ne $null -and $jsonData.requireReportList[0].ccCd -ne '') {
+    $firstCcCd = $jsonData.requireReportList[0].ccCd
+}
+
 
 # 값을 텍스트 파일로 저장 (bat 파일로 반환하기 위해)
 $firstCcCd | Out-File "ccCdResult.txt"
